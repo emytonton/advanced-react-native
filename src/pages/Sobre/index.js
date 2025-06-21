@@ -24,6 +24,7 @@ export default function Sobre(){
             <Text>{route.params?.nome}</Text>
 
             <Button title="tela de contatos"  onPress={ ()  => navigation.navigate('Contato')}/>
+            <Button title="Voltar tela"  onPress={()  => navigation.goBack() }/> 
         </View>
     );
 }
