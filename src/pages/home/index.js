@@ -6,11 +6,15 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Home(){
 
-    const navigation = useNavigation()
+    const navigation = useNavigation();
+
+    function navegaSobre(){
+        navigation.navigate('Sobre', {nome: 'emi', email: 'emilly@gmail.com'})
+    }
     return(
         <View style = {styles.container}>
             <Text> Tela home</Text>
-            <Button  title="Ir para sobre" onPress={()  => navigation.navigate('Sobre')}/>
+            <Button  title="Ir para sobre" onPress={navegaSobre}/>
         </View>
     );
 }
