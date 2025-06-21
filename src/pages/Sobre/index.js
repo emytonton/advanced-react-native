@@ -1,12 +1,22 @@
-import React, { use } from "react";
+import React, { useLayoutEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-import { useRoute } from "@react-navigation/native";
+import { useRoute, useNavigation } from "@react-navigation/native";
 
 
 export default function Sobre(){
 
     const route = useRoute();
+
+    const navigation = useNavigation();
+
+    useLayoutEffect( () => { // sincrono
+
+        navigation.setOptions({
+            title: route.params?.nome === '' ? 'Pagina sobre' : route.params?.nome
+        })
+
+    }, [])
 
     return(
         <View style = {styles.container}>
