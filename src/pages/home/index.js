@@ -1,34 +1,28 @@
-import React from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import React from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
-import { useNavigation } from "@react-navigation/native";
-
-import Icon from "@react-native-vector-icons/evil-icons";
-import Feather from 'react-native-vector-icons/Feather';
-
-
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home(){
+  const navigation = useNavigation();
 
-    const navigation = useNavigation();
+  function navegaDetalhes(){
+    navigation.navigate('Detalhes')
+  }
 
-    function navegaSobre(){
-        navigation.navigate('Sobre')
-    }
-    return(
-        <View style = {styles.container}>
-            <Text> Tela home</Text>
-            
-            <Button  title="Ir para sobre" onPress={navegaSobre}/>
-        </View>
-    );
+  return(
+    <View style={styles.container}>
+      <Text>Tela HOME</Text>
+      <Button title="Ir para detalhes" onPress={ navegaDetalhes } />
+    </View>
+  )
 }
 
-
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
+  container:{
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
+  }
 })

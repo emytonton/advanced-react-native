@@ -2,24 +2,22 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Feather from 'react-native-vector-icons/Feather';
 
-
-
-import Home from "../pages/home";
 import Sobre from "../pages/Sobre";
 import Contato from "../pages/Contato";
+import StackRoutes from "./stackRoutes";
 
 const Tab = createBottomTabNavigator();
 
 export default function Routes(){
   return(
     <Tab.Navigator
-    //screenOptions={{ para desativar o header em todas as paginas
-     // headerShown:
-    //}}
+    screenOptions={{ 
+        headerShown: false
+    }}
     >
       <Tab.Screen 
-      name="Home"
-      component={Home}
+      name="HomeStack"
+      component={StackRoutes}
       options={{
         //tabBarLabel: 'Inicio'
         tabBarIcon: ({color, size}) => {
