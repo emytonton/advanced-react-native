@@ -17,7 +17,11 @@ const Tab = createBottomTabNavigator();
 export default function App(){
   return(
   <NavigationContainer>
-    <Tab.Navigator>
+    <Tab.Navigator
+    //screenOptions={{ para desativar o header em todas as paginas
+     // headerShown:
+    //}}
+    >
       <Tab.Screen 
       name="Home"
       component={Home}
